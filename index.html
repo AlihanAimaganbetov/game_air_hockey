@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pear Air Hockey</title>
+    <style>
+        body {
+            background-color: #001601;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            background: #fcfcfc;
+        }
+
+        button,
+        input {
+            all: unset;
+            border: 1px solid #B0D944;
+            background: #000;
+            color: #B0D944;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #setup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+
+        #game,
+        #details {
+            background: #ffffff;
+            border: 1px solid #B0D944;
+        }
+    </style>
+    <script type="module" src="./app.js"></script>
+</head>
+
+<body>
+    <div id="setup">
+        <button id="create-game">Create Game</button>
+        <div>or</div>
+        <form id="join-form">
+            <input type="text" id="join-game-topic" placeholder="Enter Game Topic" required />
+            <button type="submit">Join Game</button>
+        </form>
+
+    </div>
+    <div id="loading" class="hidden">Loading ...</div>
+
+
+    <pear-snake></pear-snake>
+
+
+
+    <canvas id="game" width="400" height="600"></canvas>
+    <div id="details">
+        <div>Topic: <span id="game-topic"></span></div>
+        <div>Peers: <span id="peers-count">0</span></div>
+    </div>
+
+</body>
+
+</html>
